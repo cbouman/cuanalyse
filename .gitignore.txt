@@ -1,4 +1,4 @@
-venv
+cuanalyse
 *.pyc 
 .DS_Store 
 .env
