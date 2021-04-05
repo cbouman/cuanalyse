@@ -52,6 +52,7 @@
   - geos=3.9.1
   - geotiff=1.6.0
   - gettext=0.19.8.1
+  - gunicorn=20.1.0
   - hdf4=4.2.13
   - hdf5=1.10.6
   - icu=68.1
