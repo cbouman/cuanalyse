@@ -1,1 +1,1 @@
-web: gunicorn cuanalyse:server
+web: gunicorn Dashboard_cuanalyse:server
