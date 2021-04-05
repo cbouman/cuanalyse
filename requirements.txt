@@ -225,6 +225,4 @@
   - zipp=3.4.1
   - zlib=1.2.11
   - zstd=1.4.9
-  - pip:
-    - gunicorn==20.1.0
 
