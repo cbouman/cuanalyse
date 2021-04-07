@@ -16,7 +16,7 @@ import os
 import numpy as np
 
 #Set directory
-#os.chdir('C:\\Users\\Christian Bouman\\Documents\\2021\\CU\\Analyse campagne')
+os.chdir('C:\\Users\\Christian Bouman\\Documents\\2021\\CU\\Analyse campagne')
 
 #%% Define stylesheets and app server
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -92,13 +92,18 @@ fig2.update_xaxes(ticks='outside', tickson='boundaries')
 app.layout = html.Div([
     html.H1('Analyse verkiezingen CU Amersfoort'),
     html.Div([
-        dcc.Markdown('''
+        html.Details([
+            html.Summary('Uitleg over het dashboard'),
+            dcc.Markdown('''
                      Dit dashboard is gemaakt om inzicht te geven in de verkiezingsresultaten van ChristenUnie Amersfoort.
                      Er kan per wijk bekeken worden wat de gemiddelde verkiezingsuitslag was over de geselecteerde verkiezingen en periodes. Ook kan de standaarddeviatie bekeken worden. 
-                     Dit laat zien welke wijk het meest afwijkt over de jaren. Door te klikken op een wijk op de kaart krijg je rechts een staafgrafiek met de resultaten per verkiezing.''')]),
+                     Dit laat zien welke wijk het meest afwijkt over de jaren. Door te klikken op een wijk op de kaart krijg je rechts een staafgrafiek met de resultaten per verkiezing.''')
+                     ])
+                         ], style={'width':1200, 'display': 'inline-block', 'padding': 10}),
+    html.Hr(),
     #Radiobuttons for view of choropleth
     html.Div([
-        html.H3('Wat wil je op de kaart zien?'),
+        html.H6('Wat wil je op de kaart zien?'),
         dcc.RadioItems(id='beeld',
                        options=[
                            {'label': 'Gemiddeld percentage per wijk', 'value': 'mean'},
@@ -109,7 +114,7 @@ app.layout = html.Div([
     
     #Checklist for verkiezingssoort
     html.Div([
-        html.H3('Welke verkiezingen?'),
+        html.H6('Welke verkiezingen?'),
         dcc.Checklist(id='checklist',
                       options=[
                           {'label': 'Tweede Kamer', 'value': 'TK'},
@@ -123,7 +128,7 @@ app.layout = html.Div([
     
     #Rangeslider
     html.Div([
-        html.H3('Welke periode?'),
+        html.H6('Welke periode?'),
         dcc.RangeSlider(id='rangeslider',
                         min=minyear,
                         max=maxyear,
@@ -131,7 +136,7 @@ app.layout = html.Div([
                         step=None,
                         value=[minyear, maxyear])
         ], style={'width':1200, 'display': 'inline-block', 'padding': 10}),
-    
+    html.Hr(),
     html.Div([
         dcc.Graph(id="choropleth")
         ], style={'width': 800, 'display': 'inline-block', 'padding': 10}),
