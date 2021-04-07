@@ -16,7 +16,7 @@ import os
 import numpy as np
 
 #Set directory
-os.chdir('C:\\Users\\Christian Bouman\\Documents\\2021\\CU\\Analyse campagne')
+#os.chdir('C:\\Users\\Christian Bouman\\Documents\\2021\\CU\\Analyse campagne')
 
 #%% Define stylesheets and app server
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
