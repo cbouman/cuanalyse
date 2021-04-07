@@ -118,14 +118,14 @@ app.layout = html.Div([
                 ],
             value=[verkiezing],
             labelStyle={'display': 'inline-block'})
-        ], style={'width':800, 'display': 'inline-block', 'padding': 10}),
+        ], style={'width':1000, 'display': 'inline-block', 'padding': 10}),
             
     html.Div([
         dcc.Graph(id='horizontal-bars',
                   figure = fig2)
         ],
         #Define style of this html block
-        style={'width': 800, 'display': 'inline-block', 'padding': 10}),
+        style={'width': 1000, 'display': 'inline-block', 'padding': 10}),
     ])
                       
 #%% Define callback based on choropleth map and filtering
